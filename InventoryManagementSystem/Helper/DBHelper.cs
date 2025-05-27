@@ -94,7 +94,7 @@ namespace InventoryManagementSystem
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("User registered successfully");
-                           // LogAction(Variable.userid, "User Registration", $"New user created: {Variable.uname}");
+                            LogAction(Variable.userid, "User Registration", $"New user created: {Variable.uname}");
                         }
                     }
                 }
@@ -441,7 +441,7 @@ namespace InventoryManagementSystem
                 {
                     cmb.Items.Clear();
                     using (SqlCommand cmd = new SqlCommand(
-                        "SELECT ProductID, Name, Variant FROM Product", con))
+                        "SELECT ProductID, Name, Variant, currentstock FROM Product", con))
                     {
                         SqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
@@ -449,7 +449,8 @@ namespace InventoryManagementSystem
                             cmb.Items.Add(new ProductItem
                             {
                                 ProductID = Convert.ToInt32(reader["ProductID"]),
-                                ProductName = reader["Name"].ToString()
+                                ProductName = reader["Name"].ToString(),
+                                Quantity = Convert.ToInt32(reader["currentstock"].ToString())
                             });
                         }
                     }
@@ -638,6 +639,7 @@ namespace InventoryManagementSystem
             return fastMovingProducts;
         }
 
+ 
 
         public  static void LogAction(int userid , string action, string details)
         {

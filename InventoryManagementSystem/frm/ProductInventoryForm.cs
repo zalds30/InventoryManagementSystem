@@ -37,7 +37,7 @@ namespace InventoryManagementSystem.frm
             gbcbSelectItem.Items.Clear();
             gbcbSelectName1.Items.Clear();
             gbcbProd.Items.Clear();
-            DBHelper.Product("GetRecordsStocks");
+            DBHelper.Product("GetRecords");
             foreach (var item in DBHelper.cmb.Items)
             {
                 gbcbSelectItem.Items.Add(item);
@@ -98,14 +98,7 @@ namespace InventoryManagementSystem.frm
                 guna2TabControl1.TabPages.Remove(tabPage4);
                 guna2TabControl1.TabPages.Remove(tabPage5);
             }
-            //else if(Variable.role == "Super Admin")
-            //{
-            //    guna2TabControl1.TabPages.Remove(tabPage5);
-            //}
-            //else if(Variable.role == "Admin")
-            //{
-            //    guna2TabControl1.TabPages.Remove(tabPage6);
-            //}
+      
         
         }
 
