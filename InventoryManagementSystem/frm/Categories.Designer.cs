@@ -35,7 +35,7 @@
             this.txtcategoryname = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtseach = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.chck1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chck2 = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -140,25 +140,27 @@
             this.dataGridView2.Size = new System.Drawing.Size(705, 137);
             this.dataGridView2.TabIndex = 31;
             // 
-            // guna2TextBox1
+            // txtseach
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(19)))), ((int)(((byte)(38)))));
-            this.guna2TextBox1.BorderRadius = 6;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(26, 78);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(324, 27);
-            this.guna2TextBox1.TabIndex = 32;
+            this.txtseach.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(19)))), ((int)(((byte)(38)))));
+            this.txtseach.BorderRadius = 6;
+            this.txtseach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtseach.DefaultText = "";
+            this.txtseach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtseach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtseach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtseach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtseach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtseach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtseach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtseach.Location = new System.Drawing.Point(26, 78);
+            this.txtseach.Name = "txtseach";
+            this.txtseach.PlaceholderText = "";
+            this.txtseach.SelectedText = "";
+            this.txtseach.Size = new System.Drawing.Size(324, 27);
+            this.txtseach.TabIndex = 32;
+            this.txtseach.TextChanged += new System.EventHandler(this.txtseach_TextChanged);
+            this.txtseach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtseach_KeyPress);
             // 
             // label6
             // 
@@ -272,6 +274,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(104, 32);
             this.guna2Button3.TabIndex = 38;
             this.guna2Button3.Text = "Cancel";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // Categories
             // 
@@ -285,7 +288,7 @@
             this.Controls.Add(this.chck2);
             this.Controls.Add(this.chck1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.txtseach);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtcategoryname);
@@ -314,7 +317,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtcategoryname;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtseach;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2CheckBox chck1;
         private Guna.UI2.WinForms.Guna2CheckBox chck2;

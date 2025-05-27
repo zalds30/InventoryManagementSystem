@@ -57,6 +57,7 @@ namespace InventoryManagementSystem
 
         private async void btnProducts_Click_1(object sender, EventArgs e)
         {
+            Variable.iswitch = 0;
             panelform.Controls.Clear();
             ProductForm frm = new ProductForm();
             frm.TopLevel = false;
@@ -80,32 +81,7 @@ namespace InventoryManagementSystem
             frm.Show();
         }
 
-        private async void btnStockInOut_Click_1(object sender, EventArgs e)
-        {
-            panelform.Controls.Clear();
-            Categories frm = new Categories();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-
-
-            panelform.Controls.Add(frm);
-
-
-            frm.Location = new Point(
-                (panelform.Width - frm.Width) / 2,
-                (panelform.Height - frm.Height) / 2
-            );
-
-
-            panelform.Resize += (s, args) => {
-                frm.Location = new Point(
-                    (panelform.Width - frm.Width) / 2,
-                    (panelform.Height - frm.Height) / 2
-                );
-            };
-
-            frm.Show();
-        }
+   
 
         private async void btnProdInventory_Click_1(object sender, EventArgs e)
         {
@@ -134,66 +110,49 @@ namespace InventoryManagementSystem
             frm.Show();
         }
 
-        private async void btnReports_Click_1(object sender, EventArgs e)
-        {
-            panelform.Controls.Clear();
-            ReportsForm frm = new ReportsForm();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-
-
-            panelform.Controls.Add(frm);
-
-
-            frm.Location = new Point(
-                (panelform.Width - frm.Width) / 2,
-                (panelform.Height - frm.Height) / 2
-            );
-
-
-            panelform.Resize += (s, args) => {
-                frm.Location = new Point(
-                    (panelform.Width - frm.Width) / 2,
-                    (panelform.Height - frm.Height) / 2
-                );
-            };
-
-            frm.Show();
-        }
 
         private async void button7_Click_1(object sender, EventArgs e)
         {
-            panelform.Controls.Clear();
-            UserSettingsForm frm = new UserSettingsForm();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
+            if(Variable.role == "Super Admin" || Variable.role == "Admin")
+            {
+                panelform.Controls.Clear();
+                UserSettingsForm frm = new UserSettingsForm();
+                frm.TopLevel = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
 
 
-            panelform.Controls.Add(frm);
+                panelform.Controls.Add(frm);
 
 
-            frm.Location = new Point(
-                (panelform.Width - frm.Width) / 2,
-                (panelform.Height - frm.Height) / 2
-            );
-
-
-            panelform.Resize += (s, args) => {
                 frm.Location = new Point(
                     (panelform.Width - frm.Width) / 2,
                     (panelform.Height - frm.Height) / 2
                 );
-            };
 
-            frm.Show();
+
+                panelform.Resize += (s, args) => {
+                    frm.Location = new Point(
+                        (panelform.Width - frm.Width) / 2,
+                        (panelform.Height - frm.Height) / 2
+                    );
+                };
+
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to access this feature.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void btnLogout_Click(object sender, EventArgs e)
         {
-            var loginForm = _serviceProvider.GetRequiredService<LoginForm>();
-            loginForm.Show();
-            await Task.Delay(100);
+            DBHelper.LogAction(Variable.userid, "User Logout",
+                          $"User {Variable.uname}");
             this.Hide();
+            LoginForm frm = new LoginForm();
+            frm.Show();
+      
         }
         private void gbbtnExit_Click(object sender, EventArgs e)
         {
@@ -207,6 +166,74 @@ namespace InventoryManagementSystem
             if (result == DialogResult.OK)
             {
                 Application.Exit();
+            }
+        }
+
+        private void btnsupplier_Click(object sender, EventArgs e)
+        {
+            if(Variable.role == "Super Admin" || Variable.role == "Admin")
+            {
+                panelform.Controls.Clear();
+                Supplier frm = new Supplier();
+                frm.TopLevel = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
+
+
+                panelform.Controls.Add(frm);
+
+
+                frm.Location = new Point(
+                    (panelform.Width - frm.Width) / 2,
+                    (panelform.Height - frm.Height) / 2
+                );
+
+
+                panelform.Resize += (s, args) => {
+                    frm.Location = new Point(
+                        (panelform.Width - frm.Width) / 2,
+                        (panelform.Height - frm.Height) / 2
+                    );
+                };
+
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to access this feature.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btncategpries_Click(object sender, EventArgs e)
+        {
+            if (Variable.role == "Super Admin" || Variable.role == "Admin")
+            {
+                panelform.Controls.Clear();
+                Categories frm = new Categories();
+                frm.TopLevel = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
+
+
+                panelform.Controls.Add(frm);
+
+
+                frm.Location = new Point(
+                    (panelform.Width - frm.Width) / 2,
+                    (panelform.Height - frm.Height) / 2
+                );
+
+
+                panelform.Resize += (s, args) => {
+                    frm.Location = new Point(
+                        (panelform.Width - frm.Width) / 2,
+                        (panelform.Height - frm.Height) / 2
+                    );
+                };
+
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to access this feature.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     } 

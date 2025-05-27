@@ -40,7 +40,7 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnsignin = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtrole = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -218,28 +218,28 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Already have an Account?";
             // 
-            // guna2Button2
+            // btnsignin
             // 
-            this.guna2Button2.AllowDrop = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(389, 436);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Size = new System.Drawing.Size(69, 29);
-            this.guna2Button2.TabIndex = 27;
-            this.guna2Button2.Text = "Sign In";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btnsignin.AllowDrop = true;
+            this.btnsignin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnsignin.BorderColor = System.Drawing.Color.Transparent;
+            this.btnsignin.BorderRadius = 10;
+            this.btnsignin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnsignin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnsignin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnsignin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnsignin.FillColor = System.Drawing.Color.Transparent;
+            this.btnsignin.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsignin.ForeColor = System.Drawing.Color.Black;
+            this.btnsignin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnsignin.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnsignin.Location = new System.Drawing.Point(389, 436);
+            this.btnsignin.Name = "btnsignin";
+            this.btnsignin.PressedColor = System.Drawing.Color.Transparent;
+            this.btnsignin.Size = new System.Drawing.Size(69, 29);
+            this.btnsignin.TabIndex = 27;
+            this.btnsignin.Text = "Sign In";
+            this.btnsignin.Click += new System.EventHandler(this.btnsignin_Click);
             // 
             // label6
             // 
@@ -281,7 +281,7 @@
             this.Controls.Add(this.txtrole);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.btnsignin);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.gbtxtEmail);
@@ -314,7 +314,7 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnsignin;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox txtrole;
     }

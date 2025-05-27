@@ -169,6 +169,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm\AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\CashierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,12 @@
     <Compile Include="frm\SettlePayment.Designer.cs">
       <DependentUpon>SettlePayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\UserSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +258,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\CashierForm.resx">
       <DependentUpon>CashierForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm\SettlePayment.resx">
       <DependentUpon>SettlePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>

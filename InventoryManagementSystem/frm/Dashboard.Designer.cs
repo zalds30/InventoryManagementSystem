@@ -38,15 +38,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbTotalProducts = new System.Windows.Forms.ListBox();
             this.lbCriticalPoint = new System.Windows.Forms.ListBox();
             this.lbLogs = new System.Windows.Forms.ListBox();
             this.lbFastMoving = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbltotalproducts = new System.Windows.Forms.Label();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel5
@@ -152,37 +154,53 @@
             this.label2.Text = "Dashboard";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbTotalProducts
-            // 
-            this.lbTotalProducts.FormattingEnabled = true;
-            this.lbTotalProducts.Location = new System.Drawing.Point(26, 95);
-            this.lbTotalProducts.Name = "lbTotalProducts";
-            this.lbTotalProducts.Size = new System.Drawing.Size(336, 238);
-            this.lbTotalProducts.TabIndex = 42;
-            // 
             // lbCriticalPoint
             // 
+            this.lbCriticalPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCriticalPoint.FormattingEnabled = true;
-            this.lbCriticalPoint.Location = new System.Drawing.Point(377, 95);
+            this.lbCriticalPoint.Location = new System.Drawing.Point(377, 134);
             this.lbCriticalPoint.Name = "lbCriticalPoint";
-            this.lbCriticalPoint.Size = new System.Drawing.Size(320, 238);
+            this.lbCriticalPoint.Size = new System.Drawing.Size(320, 199);
             this.lbCriticalPoint.TabIndex = 41;
             // 
             // lbLogs
             // 
+            this.lbLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLogs.FormattingEnabled = true;
-            this.lbLogs.Location = new System.Drawing.Point(26, 342);
+            this.lbLogs.Location = new System.Drawing.Point(26, 381);
             this.lbLogs.Name = "lbLogs";
-            this.lbLogs.Size = new System.Drawing.Size(671, 212);
+            this.lbLogs.Size = new System.Drawing.Size(671, 173);
             this.lbLogs.TabIndex = 40;
             // 
             // lbFastMoving
             // 
+            this.lbFastMoving.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFastMoving.FormattingEnabled = true;
-            this.lbFastMoving.Location = new System.Drawing.Point(715, 94);
+            this.lbFastMoving.Location = new System.Drawing.Point(715, 133);
             this.lbFastMoving.Name = "lbFastMoving";
-            this.lbFastMoving.Size = new System.Drawing.Size(282, 459);
+            this.lbFastMoving.Size = new System.Drawing.Size(282, 420);
             this.lbFastMoving.TabIndex = 39;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbltotalproducts);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(26, 133);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(336, 200);
+            this.panel1.TabIndex = 48;
+            // 
+            // lbltotalproducts
+            // 
+            this.lbltotalproducts.AutoSize = true;
+            this.lbltotalproducts.Font = new System.Drawing.Font("Verdana", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotalproducts.Location = new System.Drawing.Point(3, 1);
+            this.lbltotalproducts.Name = "lbltotalproducts";
+            this.lbltotalproducts.Size = new System.Drawing.Size(79, 78);
+            this.lbltotalproducts.TabIndex = 49;
+            this.lbltotalproducts.Text = "0";
             // 
             // Dashboard
             // 
@@ -191,18 +209,19 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1023, 584);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.lbTotalProducts);
             this.Controls.Add(this.lbCriticalPoint);
             this.Controls.Add(this.lbLogs);
             this.Controls.Add(this.lbFastMoving);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
@@ -213,6 +232,8 @@
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -229,9 +250,10 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lbTotalProducts;
         private System.Windows.Forms.ListBox lbCriticalPoint;
         private System.Windows.Forms.ListBox lbLogs;
         private System.Windows.Forms.ListBox lbFastMoving;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbltotalproducts;
     }
 }

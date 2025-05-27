@@ -104,6 +104,7 @@ namespace InventoryManagementSystem
             }
 
             //  Check username length
+            //  Check username length
             if (userName.Length > 15)
             {
                 MessageBox.Show("Username must not exceed 15 characters.", "Too Long", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -161,8 +162,9 @@ namespace InventoryManagementSystem
         //For Sign Up
         private void guna2Button2_Click_1(object sender, EventArgs e)
         {
-           // var registerForm = _serviceProvider.GetRequiredService<frmRegisterUser>();
-           // registerForm.Show();
+            frmRegisterUser frm = new frmRegisterUser();
+            frm.Show();
+            this.Hide();
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -172,7 +174,14 @@ namespace InventoryManagementSystem
 
         private void cbPass_CheckedChanged_1(object sender, EventArgs e)
         {
-
+            if (cbPass.Checked)
+            {
+                gbtxtPass.PasswordChar = '\0'; 
+            }
+            else
+            {
+                gbtxtPass.PasswordChar = '●';
+            }
         }
     }
 }

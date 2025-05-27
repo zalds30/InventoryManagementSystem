@@ -37,7 +37,13 @@ namespace InventoryManagementSystem.frm
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            if(chck1.Checked == true)
+            if(txtcategoryname.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter a category name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (chck1.Checked == true)
             {
                 Variable.variantid = 1;
             }
@@ -45,6 +51,11 @@ namespace InventoryManagementSystem.frm
             {
                 Variable.variantid = 2;
             }
+            else
+            {
+                Variable.variantid = 3;
+            }
+     
             Variable.categoryname = txtcategoryname.Text.Trim();
             DBHelper.Categories("Insert");
             DBHelper.Categories("LoadRecords");
@@ -63,7 +74,9 @@ namespace InventoryManagementSystem.frm
         }
         private void Categories_Load(object sender, EventArgs e)
         {
+            Variable.iswitch = 0; // Reset switch for new category entry
             loadRecords();
+         
         }
 
         private void btndelete_Click(object sender, EventArgs e)
@@ -87,11 +100,31 @@ namespace InventoryManagementSystem.frm
             {
                 Variable.strid = Convert.ToString(selectedCategoryId);
                 DBHelper.Categories("Delete");
+                Variable.iswitch = 0;
                 loadRecords(); // Refresh the grid after deletion
+            
             }
+        }
 
+        private void txtseach_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void txtseach_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                Variable.strsearch = txtseach.Text.Trim().ToLower();
+                Variable.iswitch = 1; // Set switch for search operation
+                loadRecords();
+            }
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            txtcategoryname.Clear();
         }
     }
 }

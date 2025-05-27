@@ -42,7 +42,6 @@
             this.dgvstaff = new System.Windows.Forms.DataGridView();
             this.dgvsuperadmin = new System.Windows.Forms.DataGridView();
             this.dgvadminuser = new System.Windows.Forms.DataGridView();
-            this.btnadd = new Guna.UI2.WinForms.Guna2Button();
             this.btnrefresh = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -231,28 +230,6 @@
             this.dgvadminuser.Size = new System.Drawing.Size(465, 116);
             this.dgvadminuser.TabIndex = 39;
             // 
-            // btnadd
-            // 
-            this.btnadd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnadd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(19)))), ((int)(((byte)(38)))));
-            this.btnadd.BorderRadius = 10;
-            this.btnadd.BorderThickness = 1;
-            this.btnadd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnadd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnadd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnadd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(19)))), ((int)(((byte)(38)))));
-            this.btnadd.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadd.ForeColor = System.Drawing.Color.White;
-            this.btnadd.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnadd.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnadd.Location = new System.Drawing.Point(760, 444);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(104, 32);
-            this.btnadd.TabIndex = 40;
-            this.btnadd.Text = "Add new";
-            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
-            // 
             // btnrefresh
             // 
             this.btnrefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -282,7 +259,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1025, 586);
             this.Controls.Add(this.btnrefresh);
-            this.Controls.Add(this.btnadd);
             this.Controls.Add(this.dgvadminuser);
             this.Controls.Add(this.dgvsuperadmin);
             this.Controls.Add(this.dgvstaff);
@@ -329,7 +305,6 @@
         private System.Windows.Forms.DataGridView dgvadminuser;
         private System.Windows.Forms.DataGridView dgvsuperadmin;
         private System.Windows.Forms.DataGridView dgvstaff;
-        private Guna.UI2.WinForms.Guna2Button btnadd;
         private Guna.UI2.WinForms.Guna2Button btnrefresh;
     }
 }

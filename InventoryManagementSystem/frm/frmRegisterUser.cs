@@ -71,6 +71,12 @@ namespace InventoryManagementSystem.frm
                 return;
             }
 
+            if (gbtxtPass.Text != guna2TextBox1.Text)
+            {
+                MessageBox.Show("Password not match!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (role == string.Empty)
             {
                 MessageBox.Show("Require select role.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -83,27 +89,19 @@ namespace InventoryManagementSystem.frm
             Variable.email = email;
             DBHelper.User("Insert");
             this.Close();
-            //string query = @"INSERT INTO tblUsers(username, password, Email, roleid) values (@user, @pass, @email, 3)";
-
-            //var result = _db.ExecuteNonQuery(query, new SqlParameter("@user", user), new SqlParameter("@pass", pass), new SqlParameter("@email", email));
-
-            //if (result > 0)
-            //{
-            //    MessageBox.Show("New user created successfully");
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Creating new user failed");
-            //}
-
-
-
+            LoginForm frm = new LoginForm();
+            {
+                frm.Show();
+            }
         }
 
-        private async void guna2Button2_Click(object sender, EventArgs e)
+        private void btnsignin_Click(object sender, EventArgs e)
         {
-         
+            LoginForm frm = new LoginForm();
+            {
+                frm.Show();
+            }
+            this.Hide();
         }
     }
 }

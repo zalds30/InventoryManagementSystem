@@ -70,14 +70,6 @@ namespace InventoryManagementSystem.frm
             loadrecords();
         }
 
-        private void btnadd_Click(object sender, EventArgs e)
-        {
-            frmRegisterUser frm = new frmRegisterUser();
-            {
-                frm.ShowDialog();
-            }
-        }
-
         private void btnrefresh_Click(object sender, EventArgs e)
         {
             loadrecords();
