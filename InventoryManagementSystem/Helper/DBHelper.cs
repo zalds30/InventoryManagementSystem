@@ -94,7 +94,7 @@ namespace InventoryManagementSystem
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("User registered successfully");
-                            LogAction(Variable.userid, "User Registration", $"New user created: {Variable.uname}");
+                          //  LogAction(Variable.userid, "User Registration", $"New user created: {Variable.uname}");
                         }
                     }
                 }
